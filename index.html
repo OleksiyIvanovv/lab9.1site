@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration and Login Forms</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <div class="tab-container">
+    <button class="tab-btn active" data-tab="register">Register</button>
+    <button class="tab-btn" data-tab="login">Login</button>
+  </div>
+  <div class="form-container">
+    <form id="registerForm" class="form active">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required data-regex="^.{3,15}$" data-error="Ім'я користувача має містити від 3 до 15 символів">
+        <small class="error"></small>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required data-regex="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" data-error="Введіть коректну електронну пошту">
+        <small class="error"></small>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="password-field">
+          <input type="password" id="password" name="password" required data-regex="^.{6,}$" data-error="Пароль має містити не менше 6 символів">
+          <span class="show-password">&#128065;</span>
+        </div>
+        <small class="error"></small>
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <div class="password-field">
+          <input type="password" id="confirmPassword" name="confirmPassword" required data-regex="^.{6,}$" data-error="Паролі не збігаються">
+          <span class="show-password">&#128065;</span>
+        </div>
+        <small class="error"></small>
+      </div>
+      <button type="submit" class="submit-btn">Register</button>
+    </form>
+    <form id="loginForm" class="form">
+      <div class="form-group">
+        <label for="loginUsername">Username</label>
+        <input type="text" id="loginUsername" name="username" required>
+        <small class="error"></small>
+      </div>
+      <div class="form-group">
+        <label for="loginPassword">Password</label>
+        <div class="password-field">
+          <input type="password" id="loginPassword" name="password" required>
+          <span class="show-password">&#128065;</span>
+        </div>
+        <small class="error"></small>
+      </div>
+      <button type="submit" class="submit-btn">Login</button>
+    </form>
+  </div>
+</div>
+<div id="loader" class="loader hidden"></div>
+<script src="script.js"></script>
+</body>
+</html>
